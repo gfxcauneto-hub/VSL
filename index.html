@@ -22,26 +22,6 @@
     gtag('js', new Date());
     gtag('config', 'AW-953761327');
 
-    function gtag_report_conversion(url) {
-      var navigated = false;
-      var go = function () {
-        if (!navigated && typeof url !== 'undefined') {
-          navigated = true;
-          window.location.href = url;
-        }
-      };
-
-      gtag('event', 'conversion', {
-        'send_to': 'AW-953761327/kIYbCIfi6LIcEK_85MYD',
-        'value': 0.0,
-        'currency': 'BRL',
-        'transaction_id': '',
-        'event_callback': go
-      });
-
-      window.setTimeout(go, 1500);
-      return false;
-    }
   </script>
   <!-- UTMify Google Pixel -->
   <script>
@@ -73,11 +53,11 @@
 
     <section class="order-section esconder">
       <div class="order-box">
-        <a class="btn-buy" id="checkout-link" href="https://pay.hotmart.com/K106412716F?checkoutMode=10" onclick="return gtag_report_conversion(this.href)">¡QUIERO ACCEDER AHORA!</a>
-        <p>Compra segura procesada por Hotmart</p>
-        <div class="flags" aria-label="Disponible internacionalmente">🇪🇸 🇲🇽 🇨🇴 🇨🇱 🇦🇷 🇵🇪</div>
+        <a class="btn-buy" href="https://pay.hotmart.com/J107245255B?checkoutMode=10&amp;bid=1787944185554">¡QUIERO ACCEDER AHORA!</a>
+        <p>Compra segura</p>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -92,20 +72,22 @@
 
   <script>
     (function () {
-      var checkout = document.getElementById('checkout-link');
-      var destination = new URL(checkout.href);
-      new URLSearchParams(location.search).forEach(function (value, key) {
-        destination.searchParams.set(key, value);
-      });
-      checkout.href = destination.toString();
-
       var player = document.getElementById('vid-6a81208315ea6298be42a997');
-      player.addEventListener('player:ready', function () {
-        if (typeof player.displayHiddenElements === 'function') {
+      var configured = false;
+
+      function configureDelayedButton() {
+        if (!configured && typeof player.displayHiddenElements === 'function') {
+          configured = true;
           player.displayHiddenElements(1470, ['.esconder'], { persist: true });
         }
-      });
+      }
+
+      player.addEventListener('player:ready', configureDelayedButton);
+      if (window.customElements && customElements.whenDefined) {
+        customElements.whenDefined('vturb-smartplayer').then(configureDelayedButton);
+      }
     })();
   </script>
+
 </body>
 </html>

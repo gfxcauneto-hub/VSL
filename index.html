@@ -14,12 +14,31 @@
   <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
   <link rel="preload" href="https://cdn.converteai.net/6f2fe48f-3646-4829-9d27-f0bd5b92c850/6a8120536860e0fe3f202bce/main.m3u8" as="fetch" crossorigin="anonymous">
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-953761327"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11270479006"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-953761327');
+    gtag('config', 'AW-11270479006');
+  </script>
+  <!-- Event snippet for Compra conversion -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11270479006/PIeYCLr586EZEJ65l_4p',
+        'transaction_id': '',
+        'event_callback': callback
+        // 'new_customer': true /* calculate dynamically, populate with true/false */,
+      });
+      return false;
+    }
+
+
 
   </script>
   <!-- UTMify Google Pixel -->
@@ -32,6 +51,7 @@
 <body>
   <div class="urgency-bar">⚠️ Esta presentación está disponible para un número limitado de personas. Cuando se agote el cupo, será retirada.</div>
 
+
   <main>
     <section class="hero">
       <span class="hero__eyebrow">Psicóloga revela método secreto</span>
@@ -41,6 +61,7 @@
         <small>(Sin Gritar, Sin Castigar y Sin Sobornar)</small>
       </h1>
     </section>
+
 
     <section class="vsl-section">
       <div class="vsl-player">
@@ -56,7 +77,9 @@
       </div>
     </section>
 
+
   </main>
+
 
   <footer class="footer">
     <nav>
@@ -68,5 +91,7 @@
     <p class="disclaimer">Este sitio no está afiliado a Facebook ni a Instagram (Meta Platforms, Inc.) y no está respaldado por esas plataformas. FACEBOOK e INSTAGRAM son marcas registradas de META PLATFORMS, INC. El contenido de esta página es de nuestra exclusiva responsabilidad.</p>
   </footer>
 
+
 </body>
 </html>
+

@@ -21,26 +21,6 @@
     gtag('js', new Date());
     gtag('config', 'AW-11270479006');
   </script>
-  <!-- Event snippet for Compra conversion -->
-  <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-11270479006/PIeYCLr586EZEJ65l_4p',
-        'transaction_id': '',
-        'event_callback': callback
-        // 'new_customer': true /* calculate dynamically, populate with true/false */,
-      });
-      return false;
-    }
-
-
-
-  </script>
   <!-- UTMify Google Pixel -->
   <script>
     window.googlePixelId = '6a86773b692782a80c293b5d';
